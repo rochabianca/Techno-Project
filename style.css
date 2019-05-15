@@ -1,4 +1,3 @@
-/* Reset */
 body,
 h1,
 h2,
@@ -8,24 +7,26 @@ p {
   padding: 0px;
   margin: 0px;
 }
+
 ul {
   list-style: none;
 }
+
 * {
   box-sizing: border-box;
 }
 
-/* Estilos Gerais */
-
 body {
-  background: linear-gradient(to right, #1a1a1a 30%, #fff 30%);
-  font-family: 'Noto Serif', serif;
+  background: linear-gradient(to right, #1a1a1a 30%, #ffffff 30%);
+  font-family: 'Noto Serif';
 }
 
 #app {
   padding: 0 80px;
 }
-/* Header */
+
+/* HEADER */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -53,7 +54,8 @@ body {
   cursor: pointer;
 }
 
-/* Lista Produtos */
+/* LISTA PRODUTOS */
+
 .produtos {
   max-width: 900px;
   margin: 100px auto 0 auto;
@@ -63,7 +65,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -82,7 +84,8 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Modal */
+/* MODAL */
+
 .modal::before {
   content: '';
   position: fixed;
@@ -106,12 +109,12 @@ body {
 
 .modal_container {
   position: relative;
-  z-index: 1;
   background: linear-gradient(to right, transparent 250px, white 250px);
+  z-index: 1;
   display: grid;
   align-items: end;
   grid-gap: 50px;
-  padding: 0px 50px 50px 0;
+  padding: 50px 50px 50px 0;
   animation: fadeIn 0.3s forwards;
 }
 
@@ -141,7 +144,6 @@ body {
 
 .modal_img {
   grid-column: 1;
-  margin-top: 50px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -163,7 +165,7 @@ body {
   margin-top: 80px;
   background: #000;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
   border: none;
   font-size: 1rem;
   padding: 10px 25px;
@@ -178,19 +180,21 @@ body {
   background: #808080;
 }
 
-/* Avaliações */
+/* AVALIACOES */
 
 .avaliacoes {
   grid-column: 2;
+}
+
+.avaliacoes_subtitulo {
+  font-size: 1.75rem;
 }
 
 .avaliacao {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 20px;
 }
-.avaliacao_subtitulo {
-  font-size: 1.75rem;
-}
+
 .avaliacao_descricao {
   color: rgba(0, 0, 0, 0.7);
   margin: 20px 0 5px 0;
@@ -200,7 +204,8 @@ body {
   font-weight: bold;
 }
 
-/* Alerta */
+/* ALERTA */
+
 .alerta {
   position: absolute;
   top: 20px;
@@ -228,19 +233,20 @@ body {
 }
 
 .alerta_mensagem {
-  background: white;
+  background: #ffffff;
   display: inline-block;
   padding: 20px 40px;
   border: 2px solid black;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Carrinho */
+/* CARRINHO */
 
 .carrinho_modal::before {
   content: '';
   position: fixed;
   top: 0px;
+  left: 0px;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
@@ -264,7 +270,7 @@ body {
 .carrinho_container {
   position: relative;
   margin: 80px auto;
-  background: white;
+  background: #ffffff;
   padding: 40px;
   max-width: 800px;
   animation: fadeInDown 0.3s forwards;
@@ -279,8 +285,8 @@ body {
 
 .carrinho_titulo {
   margin-bottom: 10px;
-  border-bottom: 2px solid #000;
   padding-bottom: 20px;
+  border-bottom: 2px solid #000000;
 }
 
 .carrinho_remover {
@@ -318,9 +324,64 @@ body {
   margin-left: auto;
   background: #000;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
   font-size: 1rem;
   padding: 10px 25px;
   border: none;
   font-family: 'Noto Serif';
+}
+
+/* RESPONSIVO */
+
+@media screen and (max-width: 900px) {
+  #app {
+    padding: 0 10px;
+  }
+  .produtos {
+    margin-top: 40px;
+  }
+  .produto {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    margin: 30px auto;
+  }
+  .produto_info {
+    padding: 20px;
+  }
+  .produto_img {
+    max-width: 100%;
+  }
+  .produto_titulo {
+    font-size: 1.5rem;
+  }
+  .modal {
+    padding: 10px;
+  }
+  .modal_container {
+    grid-gap: 20px;
+    background: #ffffff;
+    padding: 10px 0;
+  }
+  .modal_img {
+    grid-row: 2;
+  }
+  .modal_img img {
+    width: 100%;
+    max-width: initial;
+  }
+  .modal_dados {
+    grid-column: 1;
+    padding: 10px;
+  }
+  .modal_btn {
+    margin-top: 20px;
+  }
+  .avaliacoes {
+    grid-column: 1;
+    padding: 10px;
+  }
+  .carrinho_modal {
+    padding: 10px;
+  }
 }
